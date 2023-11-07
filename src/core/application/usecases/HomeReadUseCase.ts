@@ -1,17 +1,17 @@
-import { Nullable } from "@/core/utils/types";
+import { Nullable } from '@/core/utils/types'
 
 export interface IHomeReadUseCase {
   api: {
     user: Nullable<{
-      code: string;
-      message: string;
-      data: { user: { name: string } };
-    }>;
-  };
+      code: string
+      message: string
+      data: { user: { name: string } }
+    }>
+  }
   state: {
-    count: number;
-    is_anything_change: boolean;
-  };
+    count: number
+    is_anything_change: boolean
+  }
 }
 
 export default class HomeReadUseCase {
@@ -31,15 +31,15 @@ export default class HomeReadUseCase {
         count: 0,
         is_anything_change: false,
       },
-    };
-    return initialState;
+    }
+    return initialState
   }
   public reset() {
-    this._data = HomeReadUseCase.init();
-    return this.toObject();
+    this._data = HomeReadUseCase.init()
+    return this.toObject()
   }
   public toObject() {
-    return JSON.parse(JSON.stringify(this._data));
+    return JSON.parse(JSON.stringify(this._data))
   }
   /**
    * =======================================================
@@ -49,8 +49,8 @@ export default class HomeReadUseCase {
    * - 수정이나, 계산식이 필요하다면, state 나 values 파트를 이용하세요.
    * =======================================================
    */
-  public set user(user: IHomeReadUseCase["api"]["user"]) {
-    this._data.api.user = user;
+  public set user(user: IHomeReadUseCase['api']['user']) {
+    this._data.api.user = user
   }
   /**
    * =======================================================
@@ -59,10 +59,10 @@ export default class HomeReadUseCase {
    * =======================================================
    */
   public get user() {
-    return this._data.api.user;
+    return this._data.api.user
   }
   public get state() {
-    return this._data.state;
+    return this._data.state
   }
   /**
    * =======================================================
@@ -77,7 +77,7 @@ export default class HomeReadUseCase {
    * =======================================================
    */
   public getCount() {
-    return this._data.state.count;
+    return this._data.state.count
   }
   /**
    * =======================================================
@@ -87,7 +87,7 @@ export default class HomeReadUseCase {
    * =======================================================
    */
   public onUpdateCount(count: number) {
-    this._data.state.count = count;
-    this._data.state.is_anything_change = true;
+    this._data.state.count = count
+    this._data.state.is_anything_change = true
   }
 }

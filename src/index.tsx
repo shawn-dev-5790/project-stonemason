@@ -1,12 +1,20 @@
-import "./assets/style/global.css";
+import './index.css'
+import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { IntlProvider } from 'react-intl'
+import { globalStore } from './lib/react-redux/globalStore'
+import AppRouters from './lib/react-router-dom/AppRouters'
+import { BrowserRouter } from 'react-router-dom'
 
-import ReactDOM from "react-dom/client";
-import Home from "./views/home/Home";
-import { Provider } from "react-redux";
-import { globalStore } from "./store";
+const LANG_CODE = 'en'
+const LANG_PACK = { k: '1' }
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={globalStore}>
-    <Home />
+    <IntlProvider locale={LANG_CODE} messages={LANG_PACK}>
+      <BrowserRouter>
+        <AppRouters />
+      </BrowserRouter>
+    </IntlProvider>
   </Provider>
-);
+)

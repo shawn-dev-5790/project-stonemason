@@ -1,28 +1,33 @@
+export const reqGetUserUrl = `https://jsonplaceholder.typicode.com/users/:user_id`
+
 export interface IReqGetUser {
-  url: string;
-  path: {};
-  query: {};
-  data: {};
+  url: string
+  path: {
+    user_id: string
+  }
+  // query: {}
+  // data: {}
 }
+
 export interface IResGetUser {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  website: string;
+  id: number
+  name: string
+  username: string
+  email: string
+  phone: string
+  website: string
   company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
+    name: string
+    catchPhrase: string
+    bs: string
+  }
   address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: { lat: string; lng: string };
-  };
+    street: string
+    suite: string
+    city: string
+    zipcode: string
+    geo: { lat: string; lng: string }
+  }
 }
 
 // const user = {
