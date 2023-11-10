@@ -19,11 +19,11 @@ export function CustomSuspense({ flag, fallback, children }: { flag: boolean; fa
     cache = cache ? cache : children
   }
 
-  console.table({
-    flag,
-    update,
-    cache,
-  })
+  // console.table({
+  //   flag,
+  //   update,
+  //   cache,
+  // })
   return (
     <div
       style={{

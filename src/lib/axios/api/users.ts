@@ -1,4 +1,4 @@
-import { reqGetUserUrl, IReqGetUser } from '@/core/adaptor/endpoints/getUser'
+import { reqGetUserUrl, IReqGetUser } from '@/dtr/adaptor/endpoints/getUser'
 import makeRequest from '../makeRequest'
 
 export async function getUserById(user_id: IReqGetUser['path']['user_id']) {

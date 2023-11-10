@@ -1,0 +1,17 @@
+.t_wrap {
+  display: grid;
+  grid-template-areas:
+    'title'
+    'cont';
+  grid-template-columns: auto;
+  grid-template-rows: 100px auto;
+  place-items: center center;
+  width: 100vw;
+  height: 100vh;
+}
+.t_wrap > header {
+  grid-area: title;
+}
+.t_wrap > main {
+  grid-area: cont;
+}

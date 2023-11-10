@@ -1,0 +1,14 @@
+{
+  "sitemap": {
+    "index": "/",
+    "all": "/*",
+    "member_login": "/member-login",
+    "member_register": "/member-register",
+    "member_forget": "/member-forget",
+    "member": "/member",
+    "member_detail": ":member_id",
+    "member_update": ":member_id/update",
+    "home": "/home",
+    "users": "/users"
+  }
+}

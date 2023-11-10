@@ -1,4 +1,4 @@
-import HomeReadUseCase, { IHomeReadUseCase } from '@/core/application/usecases/HomeReadUseCase'
+import HomeReadUseCase, { IHomeReadUseCase } from '@/dtr/application/usecases/HomeReadUseCase'
 import { TRootState } from '@/lib/react-redux'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 

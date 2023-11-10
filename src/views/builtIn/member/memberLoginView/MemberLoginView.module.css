@@ -1,0 +1,26 @@
+.wrap {
+  display: flex;
+  flex-flow: column;
+  min-width: 580px;
+  min-height: 534px;
+  padding: 48px;
+  border: 1px solid #efefef;
+}
+
+.page_title {
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+  padding: 24px;
+}
+.page_cont {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+  padding: 24px;
+}
+.page_cont label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
