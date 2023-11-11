@@ -52,7 +52,7 @@
     ]
   },
   "prettier": {
-    "printWidth": 150,
+    "printWidth": 80,
     "semi": false,
     "tabWidth": 2,
     "bracketSpacing": true,

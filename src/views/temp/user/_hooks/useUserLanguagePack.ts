@@ -1,4 +1,3 @@
-import { LANG_PACK } from '@/index'
 import { Children, useCallback, useMemo } from 'react'
 import { useIntl } from 'react-intl'
 

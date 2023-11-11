@@ -1,7 +1,7 @@
 import { ReplaceType } from '@/dtr/utils/types'
-import { LANG_PACK } from '@/index'
 import { useMemo } from 'react'
 import { useIntl } from 'react-intl'
+import { LANG_PACK } from './language'
 
 export function useAppLang() {
   const { formatMessage } = useIntl()
