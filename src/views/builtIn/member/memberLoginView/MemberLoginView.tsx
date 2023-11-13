@@ -11,6 +11,7 @@ import {
 import { AdsGridBoxType1 } from '@/lib/app-design-system/AdsGridBox'
 import { AdsLayoutFullCenter } from '@/lib/app-design-system/AdsLayout'
 import { AdsLogoSimple } from '@/lib/app-design-system/AdsLogo'
+import AdsFlexBox from '@/lib/app-design-system/AdsFlexBox/AdsFlexBox'
 
 export default function MemberLoginView() {
   const lang = useAppLang()
@@ -19,6 +20,14 @@ export default function MemberLoginView() {
     <AppErrorBoundary>
       <AdsLayoutFullCenter>
         <AdsLogoSimple />
+        <AdsFlexBox
+          _style={{
+            align: ['center', 'center'],
+            pd: '40px',
+          }}
+        >
+          test
+        </AdsFlexBox>
         <div className={css.wrap}>
           <AdsGridBoxType1
             title={<Title />}
@@ -61,7 +70,9 @@ export default function MemberLoginView() {
     return (
       <span style={tempStyle}>
         <strong>TEST</strong>
-        <span>{lang.msg['common.section.txt.unused']({ n: cnt })}</span>
+        <span>
+          {lang.msg['common.section.txt.unused']({ n: cnt, br: () => <br /> })}
+        </span>
         <button onClick={() => setCnt((prev) => prev + 1)}>add count</button>
       </span>
     )

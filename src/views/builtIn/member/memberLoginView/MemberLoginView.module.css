@@ -25,15 +25,19 @@
 .sub {
   display: flex;
   flex-flow: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 7px;
+  background-color: gold;
 }
 .img_grcode {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 194px;
-  height: 194px;
+  width: 180px;
+  height: 180px;
   background-color: #000;
   color: #fff;
 }

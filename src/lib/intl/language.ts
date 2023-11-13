@@ -9,7 +9,7 @@ export const LANG_PACK = {
   'member_login.section.txt.email': '이메일',
   'member_login.section.txt.password': '비밀번호',
   'member_login.section.txt.forget_password': '비밀번호를 잊어버리셨나요?',
-  'common.section.txt.unused': 'un-used: {n}days',
+  'common.section.txt.unused': 'un-used: {n}days <br></br>줄바꿈',
 }
 export const LANG_PACK_EN = {
   k: 'k',
@@ -22,5 +22,5 @@ export const LANG_PACK_EN = {
   'member_login.section.txt.password': 'Password',
   'member_login.section.txt.forget_password':
     'Have you forgotten your password?',
-  'common.section.txt.unused': 'un-used: {n}days',
+  'common.section.txt.unused': 'un-used: {n}days <br></br>new line',
 }
