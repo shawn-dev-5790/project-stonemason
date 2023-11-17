@@ -11,9 +11,7 @@ export function AdsLogoSimple() {
       <h1>ADS LOGO</h1>
       <button
         onClick={() => {
-          localStorage.getItem('locale') === 'ko'
-            ? onChangeLang('en')
-            : onChangeLang('ko')
+          localStorage.setItem('locale', prompt('insert lang code') || 'ko')
           window.location.reload()
         }}
       >

@@ -95,7 +95,7 @@ export default function MemberLoginView() {
         <input type='password' id='user_pwd' autoComplete='off' />
         <button
           onClick={() => alert('TEST: LOGIN SUCCESS!')}
-          children={lang.get('member_login.section.txt.login')}
+          children={lang.msg['member_login.section.txt.login']()}
         />
       </div>
     )
