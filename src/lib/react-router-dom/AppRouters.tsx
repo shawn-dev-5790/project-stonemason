@@ -14,13 +14,28 @@ export default function AppRouters() {
 
   return (
     <Routes>
-      <Route path={setting.sitemap.member_login} element={<MemberLoginView />} />
-      <Route path={setting.sitemap.member_register} element={<MemberRegisterView />} />
-      <Route path={setting.sitemap.member_forget} element={<MemberForgetView />} />
+      <Route
+        path={setting.sitemap.member_login}
+        element={<MemberLoginView />}
+      />
+      <Route
+        path={setting.sitemap.member_register}
+        element={<MemberRegisterView />}
+      />
+      <Route
+        path={setting.sitemap.member_forget}
+        element={<MemberForgetView />}
+      />
 
       <Route path={setting.sitemap.member}>
-        <Route path={setting.sitemap.member_detail} element={<MemberDetailView />} />
-        <Route path={setting.sitemap.member_update} element={<MemberUpdateView />} />
+        <Route
+          path={setting.sitemap.member_detail}
+          element={<MemberDetailView />}
+        />
+        <Route
+          path={setting.sitemap.member_update}
+          element={<MemberUpdateView />}
+        />
       </Route>
 
       <Route path={setting.sitemap.all} element={<AppExceptionNotFound />} />

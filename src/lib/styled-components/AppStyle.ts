@@ -1,6 +1,6 @@
 import { DefaultTheme, createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+const AppStyle = createGlobalStyle`
 @font-face {
   font-family: 'Noto Sans KR';
   font-style: normal;
@@ -49,8 +49,8 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
 *{box-sizing:border-box;color:inherit;}
 `
 
-export default GlobalStyle
+export default AppStyle
 
-export const THEME_LIGHT: DefaultTheme = {}
+export const themeLight: DefaultTheme = {}
 
-export const THEME_DARK: DefaultTheme = {}
+export const themeDark: DefaultTheme = {}

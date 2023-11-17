@@ -1,4 +1,4 @@
-import { onChangeLang } from '../intl/helpers'
+import AppLanguage from '../intl/AppLanguage'
 import css from './AdsLogo.module.css'
 
 export default function AdsLogo() {
@@ -11,8 +11,8 @@ export function AdsLogoSimple() {
       <h1>ADS LOGO</h1>
       <button
         onClick={() => {
-          localStorage.setItem('locale', prompt('insert lang code') || 'ko')
-          window.location.reload()
+          AppLanguage.onChangeLangTo(prompt('insert lang code') as string)
+          
         }}
       >
         {localStorage.getItem('locale')}

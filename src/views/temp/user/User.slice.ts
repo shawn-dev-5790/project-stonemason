@@ -1,6 +1,6 @@
 import UserUseCase from '@/dtr/application/usecases/User.uc'
 import { getUserById } from '@/lib/axios/api/users'
-import { TRootState } from '@/lib/react-redux'
+import { TRootState } from '@/lib/react-redux/AppStore'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const uc = new UserUseCase(UserUseCase.init())

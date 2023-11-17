@@ -1,6 +1,8 @@
-import HomeReadUseCase, { IHomeReadUseCase } from '@/dtr/application/usecases/HomeReadUseCase'
-import { TRootState } from '@/lib/react-redux'
+import HomeReadUseCase, {
+  IHomeReadUseCase,
+} from '@/dtr/application/usecases/HomeReadUseCase'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { TRootState } from '../AppStore'
 
 const uc = new HomeReadUseCase(HomeReadUseCase.init())
 
@@ -9,7 +11,10 @@ const slice = createSlice({
   initialState: HomeReadUseCase.init(),
   reducers: {
     // api
-    onUpdateApiSite: (_, { payload }: PayloadAction<IHomeReadUseCase['api']['user']>) => {
+    onUpdateApiSite: (
+      _,
+      { payload }: PayloadAction<IHomeReadUseCase['api']['user']>
+    ) => {
       uc.user = payload
       return uc.toObject()
     },

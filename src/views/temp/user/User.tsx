@@ -3,10 +3,10 @@ import css from './User.module.css'
 import AppErrorBoundary from '@/lib/react-router-dom/components/AppErrorBoundary'
 import { CustomSuspense } from '@/lib/react-router-dom/components/AppSuspense'
 import useUsersLanguagePack from './_hooks/useUserLanguagePack'
-import { useAppDispatch, useAppSelector } from '@/lib/react-redux'
 import { useEffect, useState } from 'react'
 import { actions, selector } from './User.slice'
 import UserUseCase from '@/dtr/application/usecases/User.uc'
+import { useAppDispatch, useAppSelector } from '@/lib/react-redux/AppStore'
 
 export default function User() {
   const dispatch = useAppDispatch()
@@ -65,7 +65,9 @@ function Test() {
         })}
       </div>
       <div>
-        <button onClick={() => setCount((prev) => prev + 1)}>+ add Count</button>
+        <button onClick={() => setCount((prev) => prev + 1)}>
+          + add Count
+        </button>
         {/* https://formatjs.io/docs/core-concepts/icu-syntax : 단복수는 요기도 한번 고민을... */}
         {lang.static.k3({ n: count > 1 ? `${count}days` : `${count}day` })}
       </div>

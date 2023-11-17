@@ -1,7 +1,7 @@
 import css from './MemberLoginView.module.css'
 
 import AppErrorBoundary from '@/lib/react-router-dom/components/AppErrorBoundary'
-import { useAppLang } from '@/lib/intl/useAppLang'
+import useAppLang from '@/lib/intl/hooks/useAppLang'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {

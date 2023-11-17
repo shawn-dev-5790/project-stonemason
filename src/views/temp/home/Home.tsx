@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from '../../../lib/react-redux'
 import { selector, actions } from '@/lib/react-redux/slices/HomeReadSlice'
 import AppSuspense from '@/lib/react-router-dom/components/AppSuspense'
 import AppErrorBoundary from '@/lib/react-router-dom/components/AppErrorBoundary'
 import { useHomeLanguagePack } from './hooks/useHomeLanguagePack'
 import { useCallback, useEffect } from 'react'
+import { useAppDispatch, useAppSelector } from '@/lib/react-redux/AppStore'
 
 export default function Home() {
   const lang = useHomeLanguagePack()
@@ -64,7 +64,9 @@ function PageContent({ d }: { d: any }) {
 
 function fetchUser(userId: string) {
   let user: any = null
-  const suspender = fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+  const suspender = fetch(
+    `https://jsonplaceholder.typicode.com/users/${userId}`
+  )
     .then((response) => response.json())
     .then((data) => {
       setTimeout(() => {
