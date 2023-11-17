@@ -1,0 +1,9 @@
+{
+    "member_login.section.txt.login": "ログイン",
+    "member_login.section.txt.register_yet": "まだ会員ではありませんか？",
+    "member_login.section.txt.register": "会員としてサインアップするには。",
+    "member_login.section.txt.email": "メールアドレス",
+    "member_login.section.txt.password": "パスワード",
+    "member_login.section.txt.forget_password": "パスワードを忘れましたか？",
+    "common.section.txt.unused": "未使用: {n}日 <br></br>改行"
+}

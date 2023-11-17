@@ -1,17 +1,22 @@
-import { LANG_PACK, LANG_PACK_EN } from './language'
+import langPackKo from './data/ko.json'
+import langPackEn from './data/en.json'
+import langPackJa from './data/ja.json'
 
 export const onChangeLang = (code: string) => {
-  let currentLangPack
+  let currentLangPack = {}
 
   switch (code) {
     case 'en':
-      currentLangPack = LANG_PACK_EN
+      currentLangPack = langPackEn
       break
     case 'ko':
-      currentLangPack = LANG_PACK
+      currentLangPack = langPackKo
+      break
+    case 'ja':
+      currentLangPack = langPackJa
       break
     default:
-      currentLangPack = LANG_PACK
+      currentLangPack = langPackKo
       break
   }
 
@@ -22,3 +27,5 @@ export const onChangeLang = (code: string) => {
     messages: currentLangPack,
   }
 }
+
+export const getLangData = onChangeLang(localStorage.getItem('locale') || 'ko')

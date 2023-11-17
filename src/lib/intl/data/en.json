@@ -1,0 +1,9 @@
+{
+    "member_login.section.txt.login": "Login",
+    "member_login.section.txt.register_yet": "Are you not a member yet?",
+    "member_login.section.txt.register": "To sign up as a member.",
+    "member_login.section.txt.email": "Email",
+    "member_login.section.txt.password": "Password",
+    "member_login.section.txt.forget_password": "Have you forgotten your password?",
+    "common.section.txt.unused": "un-used: {n}days <br></br>new line"
+}
