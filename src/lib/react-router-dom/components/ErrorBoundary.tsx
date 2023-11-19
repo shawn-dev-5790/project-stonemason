@@ -1,15 +1,11 @@
 import { ErrorBoundary } from 'react-error-boundary'
 
 export interface IAppErrorBoundary {
-  fallback?: React.ReactNode | any
+  fallback?: React.ReactNode
   children: React.ReactNode
 }
 
 export default function AppErrorBoundary({ children, fallback }: IAppErrorBoundary) {
-  //   const onLogError: ((error: Error, info: React.ErrorInfo) => void) | undefined = (error, info) => {
-  //     console.log(error)
-  //     console.log(info)
-  //   }
   return (
     <ErrorBoundary
       onReset={(details: any) => {

@@ -3,7 +3,9 @@
     "index": "/",
     "all": "/*",
     "login": "/sign-in",
-    "register": "/sign-up"
+    "register": "/sign-up",
+    "passwordRecovery": "/password-recovery",
+    "sites": "/sites"
   },
   "local_storage": {
     "locale": "_locale"
