@@ -51,6 +51,6 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
 
 export default AppStyle
 
-export const themeLight: DefaultTheme = {}
+export const THEME_LIGHT: DefaultTheme = {}
 
-export const themeDark: DefaultTheme = {}
+export const THEME_DARK: DefaultTheme = {}

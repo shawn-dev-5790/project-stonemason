@@ -3,7 +3,7 @@ import { useScrollBehavior } from './helpers/useScrollBehavior'
 // import MemberLoginView from '@/views/builtIn/member/memberLoginView/MemberLoginView'
 import { AppExceptionNotFound } from './components/AppException'
 import setting from '@/core/setting.json'
-import LoginPage from '@/views/login/LoginPage'
+import LoginPage from '@/view/login/LoginPage'
 
 export default function AppRouters() {
   useScrollBehavior(0, 0)
