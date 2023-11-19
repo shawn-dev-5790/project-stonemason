@@ -1,14 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { HomeReadReducer } from './slices/HomeReadSlice'
-import { UserReducer } from '@/views/temp/user/User.slice'
 import { TypedUseSelectorHook, useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 
 const AppStore = configureStore({
-  reducer: {
-    homeRead: HomeReadReducer,
-    user: UserReducer,
-  },
+  reducer: {},
 })
 
 export default AppStore

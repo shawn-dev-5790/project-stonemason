@@ -1,0 +1,14 @@
+{
+  "sitemap": {
+    "index": "/",
+    "all": "/*",
+    "login": "/sign-in",
+    "register": "/sign-up"
+  },
+  "local_storage": {
+    "locale": "_locale"
+  },
+  "request": {
+    "exception_code": "_exception_code"
+  }
+}

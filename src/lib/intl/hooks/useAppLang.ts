@@ -1,4 +1,4 @@
-import { ReplaceType } from '@/dtr/utils/types'
+import { ReplaceType } from '@/core/utils/types'
 import { useIntl } from 'react-intl'
 import langPackKo from '../data/ko.json'
 

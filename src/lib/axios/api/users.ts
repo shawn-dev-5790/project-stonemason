@@ -1,6 +1,10 @@
-import { reqGetUserUrl, IReqGetUser } from '@/dtr/adaptor/endpoints/getUser'
-import makeRequest from '../makeRequest'
+// import { reqGetUserUrl, IReqGetUser } from '@/core/adaptor/typicode/endpoints/getUser'
+// import makeRequest from '../makeRequest'
 
-export async function getUserById(user_id: IReqGetUser['path']['user_id']) {
-  return makeRequest({ url: reqGetUserUrl.replace(':user_id', user_id) }).then((res) => res.data)
-}
+// export async function getUserById(user_id: IReqGetUser['path']['user_id']) {
+//   return makeRequest({ url: reqGetUserUrl.replace(':user_id', user_id) }).then(
+//     (res) => res.data
+//   )
+// }
+
+export {}
