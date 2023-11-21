@@ -1,5 +1,6 @@
 import LoginPageUseCase from '@/core/application/usecases/LoginPageUseCase'
-import AppLanguage from '@/lib/intl/AppLanguage'
+import { reqPostLogin } from '@/lib/axios/requests/auth'
+import AppLanguage from '@/lib/intl/LanguageManager'
 import useAppLang from '@/lib/intl/hooks/useAppLang'
 import AppErrorBoundary from '@/lib/react-router-dom/components/ErrorBoundary'
 import AppSuspense from '@/lib/react-router-dom/components/Suspense'
@@ -87,7 +88,7 @@ function Content() {
               h='36px'
               bg='#efefef'
               disabled={!uc.canLogin()}
-              onClick={() => uc.onLogin(null)}
+              onClick={() => uc.onLogin(reqPostLogin)}
             >
               {lang.msg['member_login.section.txt.login']()}
             </AppFlexBox>

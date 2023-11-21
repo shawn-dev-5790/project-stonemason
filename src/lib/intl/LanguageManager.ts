@@ -1,6 +1,6 @@
-import langPackKo from './data/ko.json'
-import langPackEn from './data/en.json'
-import langPackJa from './data/ja.json'
+import langPackKo from './languages/ko.json'
+import langPackEn from './languages/en.json'
+import langPackJa from './languages/ja.json'
 
 const langPacks: Record<string, typeof langPackKo> = {
   ko: langPackKo,

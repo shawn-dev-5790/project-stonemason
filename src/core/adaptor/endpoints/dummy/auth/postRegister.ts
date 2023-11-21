@@ -1,8 +1,6 @@
-export const REQUEST_URL_POST_REGISTER = '/auth/register'
-
 export interface IReqPostRegister {
   method: 'POST'
-  url: string
+  url: '/auth/register' | string
   data: {
     email: string
     password: string

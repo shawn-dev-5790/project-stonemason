@@ -1,12 +1,8 @@
-import { TConfirmationType } from '@/core/domain/types'
-
-export const REQUEST_URL_POST_PIN_VERIFICATION = '/auth/pin-verification'
-
 export interface IReqPostPinVerification {
   method: 'POST'
-  url: string
+  url: '/auth/pin-verification' | string
   data: {
-    confirmation_type: TConfirmationType
+    confirmation_type: 'to_register' | 'to_recovery_password'
     email: string
     pincode: string
   }

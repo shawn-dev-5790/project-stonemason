@@ -1,7 +1,6 @@
-export const REQUEST_URL_POST_LOGIN = '/auth/login'
-
 export interface IReqPostLogin {
-  url: 'POST'
+  method: 'POST'
+  url: '/auth/login' | string
   data: {
     email: string
     password: string

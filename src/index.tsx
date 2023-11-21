@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import AppRouters from './lib/react-router-dom/AppRouters'
 import AppStyle, { THEME_LIGHT } from './lib/styled-components/AppStyle'
 import AppStore from './lib/react-redux/AppStore'
-import AppLanguage from './lib/intl/AppLanguage'
+import AppLanguage from './lib/intl/LanguageManager'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={AppStore}>
