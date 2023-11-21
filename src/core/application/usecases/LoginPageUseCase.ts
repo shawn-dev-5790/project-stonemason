@@ -1,7 +1,6 @@
 import EmailVO from '@/core/domain/valueObjects/EmailVO'
 import PasswordVO from '@/core/domain/valueObjects/PasswordVO'
 import setting from '@/core/setting.json'
-import { EMAIL_REGEX } from '@/core/utils/regex'
 import { getRouterUrl } from '@/core/utils/url'
 
 export interface ILoginPageUseCase {
@@ -44,28 +43,25 @@ export default class LoginPageUseCase {
   public getSitesPageUrl() {
     return getRouterUrl(setting.sitemap.sites)
   }
-
   public canLogin(): boolean {
     const checkList = [this.email.verify(), this.password.verify()]
     return checkList.every((check) => check)
   }
 
   // features
-  public onChangeEmail(email: string, onError: () => void) {
-    if (!this.email.verify()) return onError()
+  public onChangeEmail({ email }: { email: string }) {
     this._data.state.email = email
   }
-  public onChangePassword(password: string, onError: () => void) {
-    if (!this.password.verify()) return onError()
+  public onChangePassword({ password }: { password: string }) {
     this._data.state.password = password
   }
-  public onChangeLanguage(LanguageManager: any, onError: () => void = () => null) {
-    if (!LanguageManager.onChangeLangTo) return
+  public onChangeLanguage(LanguageManager: any) {
+    if (!LanguageManager) return
     LanguageManager.onChangeLangTo(prompt('insert language code') as string)
   }
-  public onLogin(RequestManager: any) {
+  public onLogin({ RequestManager }: { RequestManager: any }) {
     if (!this.canLogin()) return
     if (!RequestManager) return
-    RequestManager(this.state.email, this.state.password)
+    RequestManager(this.state.email, this.state.password).catch((err: any) => console.log(err))
   }
 }

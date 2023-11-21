@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { removeCustomAttr } from '../utils/helpers'
+import StyleManager from '../StyleManager'
 
 interface IAppFullPageLayout {
   pd?: string
@@ -8,7 +8,7 @@ interface IAppFullPageLayout {
   br?: string
   bg?: string
 }
-export const AppFullPageLayout = styled.div.withConfig(removeCustomAttr())<IAppFullPageLayout>`
+export const AppFullPageLayout = styled.div.withConfig(StyleManager.removeCustomAttr())<IAppFullPageLayout>`
   display: block;
   width: 100vw;
   height: 100vh;

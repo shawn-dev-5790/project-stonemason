@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { removeCustomAttr } from '../utils/helpers'
+import StyleManager from '../StyleManager'
 
 export interface TAppFlexBox {
   flow?: string
@@ -14,7 +14,7 @@ export interface TAppFlexBox {
   bg?: string
 }
 
-export const AppFlexBox = styled.div.withConfig(removeCustomAttr())<TAppFlexBox>`
+export const AppFlexBox = styled.div.withConfig(StyleManager.removeCustomAttr())<TAppFlexBox>`
   display: flex;
 
   // flex

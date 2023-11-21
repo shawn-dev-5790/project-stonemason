@@ -1,18 +1,16 @@
-import LoginPageUseCase from '@/core/application/usecases/LoginPageUseCase'
+import { Link } from 'react-router-dom'
 import { reqPostLogin } from '@/lib/axios/requests/auth'
 import LanguageManager from '@/lib/intl/LanguageManager'
-import AppLanguage from '@/lib/intl/LanguageManager'
-import useLanguageManager from '@/lib/intl/hooks/useLanguageManager'
-import useAppLang from '@/lib/intl/hooks/useLanguageManager'
 import AppErrorBoundary from '@/lib/react-router-dom/components/ErrorBoundary'
 import AppSuspense from '@/lib/react-router-dom/components/Suspense'
 import { AppFlexBox } from '@/lib/styled-components/components/Box'
 import { AppFullPageLayout } from '@/lib/styled-components/components/Layout'
-import { Link } from 'react-router-dom'
-
-const uc = new LoginPageUseCase(LoginPageUseCase.init())
+import { useLoginPageLang, useLoginPageUseCase } from './LoginPage.hooks'
+import { useAppDispatch } from '@/lib/react-redux/StoreManager'
+import { useEffect } from 'react'
 
 export default function LoginPage() {
+  useEffect(() => {}, [])
   return (
     <AppErrorBoundary>
       <AppSuspense>
@@ -36,14 +34,28 @@ function Content() {
     h1: 'STONEMASON',
     qr: 'QR.code',
   }
-  const lang = useLanguageManager()
+  const lang = useLoginPageLang()
+  const { uc, actions } = useLoginPageUseCase()
+
+  const dispatch = useAppDispatch()
   const toast = (msg: string) => () => console.log(msg)
 
+  useEffect(() => {
+    console.log(' //dispatch(actions.callAPI)')
+  }, [dispatch])
+
+  useEffect(
+    () => () => {
+      console.log('reset')
+      dispatch(actions.onReset())
+    },
+    [actions, dispatch]
+  )
   return (
     <AppFlexBox flow='column' align='center center' w='100%' h='100%'>
       <AppFlexBox align='center center' pd='36px' gap='4px'>
         <AppFlexBox as='h1'>{text.h1}</AppFlexBox>
-        <AppFlexBox as='button' mg='6px 0 0 0' pd='4px' onClick={() => uc.onChangeLanguage(AppLanguage)}>
+        <AppFlexBox as='button' mg='6px 0 0 0' pd='4px' onClick={() => uc.onChangeLanguage(LanguageManager)}>
           {LanguageManager.locale}
         </AppFlexBox>
       </AppFlexBox>
@@ -63,7 +75,7 @@ function Content() {
                 b='1px solid #999'
                 type='text'
                 placeholder='email'
-                onChange={(e) => uc.onChangeEmail(e.target.value, toast('err-email'))}
+                onChange={(e) => dispatch(actions.onChangeEmail({ email: e.target.value }))}
               />
               <AppFlexBox as='label' align='space-between center'>
                 {lang.msg['member_login.section.txt.password']()}
@@ -79,7 +91,7 @@ function Content() {
                 onChange={(e) => {
                   // TODO: block auto-complete on chrome web
                   if (e.target.value.length > 1) e.currentTarget.type = 'password'
-                  uc.onChangePassword(e.target.value, toast('err-password'))
+                  dispatch(actions.onChangePassword({ password: e.target.value }))
                 }}
               />
             </AppFlexBox>
@@ -90,10 +102,12 @@ function Content() {
               h='36px'
               bg='#efefef'
               disabled={!uc.canLogin()}
-              onClick={() => uc.onLogin(reqPostLogin)}
+              onClick={() => uc.onLogin({ RequestManager: reqPostLogin })}
             >
+              {String()}
               {lang.msg['member_login.section.txt.login']()}
             </AppFlexBox>
+            <pre>{JSON.stringify(uc.toObject(), null, 2)}</pre>
           </AppFlexBox>
           <AppFlexBox align='center center' w='200px' h='200px' bg='#efefef'>
             {text.qr}

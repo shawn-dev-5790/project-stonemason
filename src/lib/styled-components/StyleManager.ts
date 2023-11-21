@@ -1,6 +1,35 @@
 import { DefaultTheme, createGlobalStyle } from 'styled-components'
 
-const AppStyle = createGlobalStyle`
+export default class StyleManager {
+  public static get GlobalStyle(): ReturnType<typeof createGlobalStyle> {
+    return AppGlobalStyle
+  }
+  public static get light(): DefaultTheme {
+    return {}
+  }
+  public static get dark(): DefaultTheme {
+    return {}
+  }
+  public static get customAttrs(): Array<string> {
+    return [
+      'w', // width
+      'h', // height
+      'flex', // flex-flow
+      'align', // justify-content align-items
+      'gap', // gap
+      'pd', // padding
+      'mg', // margin
+      'b', // border
+      'br', // border-radius
+      'bg', // background
+    ]
+  }
+  public static removeCustomAttr(attrs: Array<string> = StyleManager.customAttrs) {
+    return { shouldForwardProp: (prop: string) => !attrs.includes(prop) }
+  }
+}
+
+const AppGlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Noto Sans KR';
   font-style: normal;
@@ -48,9 +77,3 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
 .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;}
 *{box-sizing:border-box;color:inherit;}
 `
-
-export default AppStyle
-
-export const THEME_LIGHT: DefaultTheme = {}
-
-export const THEME_DARK: DefaultTheme = {}
