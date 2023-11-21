@@ -2,7 +2,8 @@ import LoginPageUseCase from '@/core/application/usecases/LoginPageUseCase'
 import { reqPostLogin } from '@/lib/axios/requests/auth'
 import LanguageManager from '@/lib/intl/LanguageManager'
 import AppLanguage from '@/lib/intl/LanguageManager'
-import useAppLang from '@/lib/intl/hooks/useAppLang'
+import useLanguageManager from '@/lib/intl/hooks/useLanguageManager'
+import useAppLang from '@/lib/intl/hooks/useLanguageManager'
 import AppErrorBoundary from '@/lib/react-router-dom/components/ErrorBoundary'
 import AppSuspense from '@/lib/react-router-dom/components/Suspense'
 import { AppFlexBox } from '@/lib/styled-components/components/Box'
@@ -35,7 +36,7 @@ function Content() {
     h1: 'STONEMASON',
     qr: 'QR.code',
   }
-  const lang = useAppLang()
+  const lang = useLanguageManager()
   const toast = (msg: string) => () => console.log(msg)
 
   return (

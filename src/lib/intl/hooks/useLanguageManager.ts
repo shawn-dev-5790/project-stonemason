@@ -5,7 +5,7 @@ import langPackKo from '../languages/ko.json'
 export type TLangCallback = (opts?: any) => string
 export type TLangMsg = ReplaceType<typeof langPackKo, TLangCallback>
 
-export default function useAppLang() {
+export default function useLanguageManager() {
   const { formatMessage: fm } = useIntl()
 
   const msg: TLangMsg = Object.fromEntries(
