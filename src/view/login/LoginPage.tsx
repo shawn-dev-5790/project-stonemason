@@ -1,5 +1,6 @@
 import LoginPageUseCase from '@/core/application/usecases/LoginPageUseCase'
 import { reqPostLogin } from '@/lib/axios/requests/auth'
+import LanguageManager from '@/lib/intl/LanguageManager'
 import AppLanguage from '@/lib/intl/LanguageManager'
 import useAppLang from '@/lib/intl/hooks/useAppLang'
 import AppErrorBoundary from '@/lib/react-router-dom/components/ErrorBoundary'
@@ -42,7 +43,7 @@ function Content() {
       <AppFlexBox align='center center' pd='36px' gap='4px'>
         <AppFlexBox as='h1'>{text.h1}</AppFlexBox>
         <AppFlexBox as='button' mg='6px 0 0 0' pd='4px' onClick={() => uc.onChangeLanguage(AppLanguage)}>
-          {AppLanguage.locale()}
+          {LanguageManager.locale}
         </AppFlexBox>
       </AppFlexBox>
       <AppFlexBox flow='column' align='center center' gap='24px' pd='48px' b='1px solid #999'>
