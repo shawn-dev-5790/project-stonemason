@@ -1,9 +1,13 @@
 {
-    "member_login.section.txt.login": "ログイン",
-    "member_login.section.txt.register_yet": "まだ会員ではありませんか？",
-    "member_login.section.txt.register": "会員としてサインアップするには。",
-    "member_login.section.txt.email": "メールアドレス",
-    "member_login.section.txt.password": "パスワード",
-    "member_login.section.txt.forget_password": "パスワードを忘れましたか？",
-    "common.section.txt.unused": "未使用: {n}日 <br></br>改行"
+  "common.h1.txt.app_title": "STONEMASON（ストーンメイソン）",
+  "common.section.txt.app_qr_code": "QRコード",
+  "common.section.txt.unused": "未使用: {n}日 <br></br>改行",
+  "member_login.section.txt.email": "メールアドレス",
+  "member_login.section.txt.email_error": "メールアドレスの形式が正しくありません",
+  "member_login.section.txt.forget_password": "パスワードを忘れましたか？",
+  "member_login.section.txt.login": "ログイン",
+  "member_login.section.txt.password": "パスワード",
+  "member_login.section.txt.password_error": "パスワードは8文字以上である必要があります",
+  "member_login.section.txt.register": "会員としてサインアップするには。",
+  "member_login.section.txt.register_yet": "まだ会員ではありませんか？"
 }

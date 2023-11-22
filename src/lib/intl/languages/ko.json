@@ -1,9 +1,13 @@
 {
-    "member_login.section.txt.login": "로그인",
-    "member_login.section.txt.register_yet": "아직 회원이 아니신가요?",
-    "member_login.section.txt.register": "회원가입하기",
-    "member_login.section.txt.email": "이메일",
-    "member_login.section.txt.password": "비밀번호",
-    "member_login.section.txt.forget_password": "비밀번호를 잊어버리셨나요?",
-    "common.section.txt.unused": "un-used: {n}days <br></br>줄바꿈"
+  "common.h1.txt.app_title": "STONEMASON",
+  "common.section.txt.app_qr_code": "QR",
+  "common.section.txt.unused": "un-used: {n}days <br></br>줄바꿈",
+  "member_login.section.txt.email": "이메일",
+  "member_login.section.txt.email_error": "이메일 형식이 아닙니다",
+  "member_login.section.txt.forget_password": "비밀번호를 잊어버리셨나요?",
+  "member_login.section.txt.login": "로그인",
+  "member_login.section.txt.password": "비밀번호",
+  "member_login.section.txt.password_error": "비밀번호는 8글자 이상이어야 합니다",
+  "member_login.section.txt.register": "회원가입하기",
+  "member_login.section.txt.register_yet": "아직 회원이 아니신가요?"
 }

@@ -11,6 +11,7 @@ export interface ILoginPageUseCase {
 export default class LoginPageUseCase {
   constructor(private _data: ILoginPageUseCase) {}
 
+  // system
   public static init(): ILoginPageUseCase {
     return {
       api: null,
@@ -24,44 +25,51 @@ export default class LoginPageUseCase {
     return JSON.parse(JSON.stringify(this._data))
   }
 
+  // getters & setters
   private get state() {
     return this._data.state
   }
-  private get email() {
-    return new EmailVO(this.state.email)
-  }
-  private get password() {
-    return new PasswordVO(this.state.password)
-  }
 
-  public getRegisterPageUrl() {
+  // constants
+
+  // values
+  public getRegisterPageUrl(): string {
     return getRouterUrl(setting.sitemap.register)
   }
-  public getPasswordRecoveryPageUrl() {
+  public getPasswordRecoveryPageUrl(): string {
     return getRouterUrl(setting.sitemap.passwordRecovery)
   }
-  public getSitesPageUrl() {
+  public getSitesPageUrl(): string {
     return getRouterUrl(setting.sitemap.sites)
   }
   public canLogin(): boolean {
-    const checkList = [this.email.verify(), this.password.verify()]
-    return checkList.every((check) => check)
+    const email = new EmailVO(this.state.email)
+    const password = new PasswordVO(this.state.password)
+    return [email.verify(), password.verify()].every((check) => check)
+  }
+  public isShowEmailErrorMsg(): boolean {
+    const email = new EmailVO(this.state.email)
+    return email.value !== '' && !email.verify()
+  }
+  public isShowPasswordErrorMsg(): boolean {
+    const password = new PasswordVO(this.state.password)
+    return password.value !== '' && !password.verify()
   }
 
   // features
-  public onChangeEmail({ email }: { email: string }) {
+  public onChangeEmail(email: string): void {
     this._data.state.email = email
   }
-  public onChangePassword({ password }: { password: string }) {
+  public onChangePassword(password: string): void {
     this._data.state.password = password
   }
-  public onChangeLanguage(LanguageManager: any) {
+  public onChangeLanguage(LanguageManager: any): void {
     if (!LanguageManager) return
     LanguageManager.onChangeLangTo(prompt('insert language code') as string)
   }
-  public onLogin({ RequestManager }: { RequestManager: any }) {
-    if (!this.canLogin()) return
+  public onLogin(RequestManager: any): void {
     if (!RequestManager) return
+    if (!this.canLogin()) return
     RequestManager(this.state.email, this.state.password).catch((err: any) => console.log(err))
   }
 }
