@@ -8,13 +8,15 @@ import { AppFlexBox } from '@/lib/styled-components/components/Box'
 import { AppFullPageLayout } from '@/lib/styled-components/components/Layout'
 import { useLoginPageLang, useLoginPageUseCase } from './LoginPage.hooks'
 import { useAppDispatch } from '@/lib/react-redux/StoreManager'
+import { Test } from './components/Test'
 
 export default function LoginPage() {
   return (
     <AppErrorBoundary>
       <AppFullPageLayout>
         <AppSuspense>
-          <Content />
+          <Test />
+          {/* <Content /> */}
         </AppSuspense>
       </AppFullPageLayout>
     </AppErrorBoundary>

@@ -1,43 +1,136 @@
-# project stonemason
+## 프로젝트 구조 보고서
 
-## conventions
+### 1. `core` 디렉토리
 
-### naming
+```plaintext
+core/
+│
+├── adaptor/
+│   ├── endpoints/
+│   │   └── /* 엔드포인트 파일들 */
+│   │
+│   └── fake-dev-endpoints/
+│       └── /* 가짜 엔드포인트 파일들 */
+│
+├── application/
+│   ├── services/
+│   │   └── /* 서비스 관련 파일들 */
+│   │
+│   └── usecases/
+│       └── /* 유즈케이스 관련 파일들 */
+│
+├── domain/
+│   ├── entities/
+│   │   └── /* 엔티티 파일들 */
+│   │
+│   ├── enums.ts
+│   ├── types.ts
+│   │
+│   └── valueObjects/
+│       └── /* 값 객체 파일들 */
+│
+├── setting.json
+│
+└── utils/
+    └── /* 유틸리티 함수 파일들 */
+```
 
-- src 의 첫번째 파일은 core, lib, view 로 단수를 사용
+### 2. `lib` 디렉토리
 
-- core 부분은 내부 비즈니스로직이 포함되도록 설정
-- lib 은 npm 라이브러리의 수정 관련 내용이 포함되도록 수정
-- view 는 페이지 단위
+```plaintext
+src/lib/
+│
+├── axios/
+│   ├── RequestManager.ts
+│   └── requests/
+│       └── auth.ts
+│
+├── intl/
+│   ├── LanguageManager.ts
+│   └── languages/
+│       ├── en.json
+│       ├── ja.json
+│       └── ko.json
+│
+├── react-redux/
+│   ├── StoreManager.ts
+│   └── slices/
+│       └── LoginPageUseCaseSlice.ts
+│
+├── react-router-dom/
+│   ├── AppRouters.tsx
+│   ├── components/
+│   │   ├── ErrorBoundary.tsx
+│   │   └── Suspense.tsx
+│   └── helpers/
+│       ├── retryComponent.ts
+│       └── useScrollBehavior.ts
+│
+└── styled-components/
+    ├── StyleManager.ts
+    ├── components/
+    │   ├── Box.tsx
+    │   ├── Exception.tsx
+    │   ├── Layout.tsx
+    │   └── Loader.tsx
+    ├── hooks/
+    └── styledComponent.d.ts
+```
 
-### src.core.endpoints
+#### Manager 클래스
 
-## 고민
+`lib` 디렉토리의 `Manager` 클래스는 외부 라이브러리나 모듈을 관리하고 중재하는 역할을 수행합니다. 각 라이브러리의 초기화, 설정, 통합 등을 담당하며, 중요한 역할을 수행합니다.
 
-TODO
+##### `RequestManager.ts` 파일 설명
 
-유즈케이스 slice 에 적용하기. 그리고 활용법 연구
+```typescript
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
-### 앱
+export default class RequestManager {
+  // 상수
+  public static get DEFAULT_REQUEST_OPTS() {
+    // ...
+  }
 
-앱은 크게 내장 앱(built-in app), 확장 앱(extension app)으로 나뉨
+  // 시스템 - 요청 인스턴스 생성
+  public static create<Req extends AxiosRequestConfig, Res>(config: Req): Promise<AxiosResponse<Res, any>> {
+    // ...
+  }
 
-확장 앱은 추가적으로 에드온(addon)을 통해 기능을 강화 할 수 있음
+  // 인터셉터
+  public static onReqSuccessInterceptor(req: InternalAxiosRequestConfig<any>) {
+    // ...
+  }
+  // ... (각각의 인터셉터 메서드)
+}
+```
 
-### 내장 앱
+##### `RequestManager` 사용 예시
 
-- 설정
-- 맴버 - 권한
-- 결제 - 카드, 충전, 내역 - 설정
-- 상점 - 패키지 맟 구독, 구매
-- 사이트 - 목록, 홈, 생성, 수정, 삭제 - 설정
-- 알림 - 정보 알림용 -> (우편함 - 출석 및 이벤트)
-- 커뮤니티
+```typescript
+import RequestManager from '../RequestManager'
+// ... (인터페이스 등의 import)
 
-### 확장 앱
+export const reqPostLogin = (data: IReqPostLogin['data']) => {
+  // ...
+}
 
-- 상품 앱 - 연관상품
-- 유저 앱
-- 리포트 앱
-- 진단 앱 - 지표, 통계, 코호트, 퍼널
-- 캠페인 앱 - 온사이트, 메시지, 채널별 에드온 - 소재
+// ... (각각의 요청 함수)
+```
+
+### 3. `view` 디렉토리
+
+라우터에서 지정된 페이지 단위를 기반으로 디렉토리를 구성합니다. 주로 사용자 인터페이스를 구성하는데 필요한 컴포넌트들이 위치하며, 페이지 단위로 구분하여 관리합니다.
+
+```plaintext
+view/
+│
+├── /* 라우터에서 지정된 페이지 단위 디렉토리 */
+└── /* 페이지를 구성하는 컴포넌트 파일들 */
+```
+
+위와 같이 디렉토리에 대한 추가 설명과 함께 해당 디렉토리의 파일 구조를 나타내었습니다. 더 필요한 정보가 있나요?
+
+```
+
+```

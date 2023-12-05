@@ -58,7 +58,7 @@ const AppGlobalStyle = createGlobalStyle`
 }
 
 html,body,#root{min-height:100%;}
-body{position:relative;width:100%;background:#fff;direction:ltr;}
+body{position:relative;width:100%;background-color:#e8e8e8;direction:ltr;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0;}
 body,th,td,input,select,textarea,button{font-size:14px;line-height:1.5;font-family:'Noto Sans KR';
 fieldset,img{border:0 none;}
@@ -71,9 +71,11 @@ button:disabled{cursor:not-allowed;}
 color:#262626;letter-spacing:-0.01em}
 a{color:#3359ff;text-decoration:none;}
 address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
-/*global*/
+/* global */
 .ir_pm{display:block;overflow:hidden;font-size:1px;line-height:0;text-indent:-9999px;}
 .ir_wa{display:block;overflow:hidden;position:relative;width:100%;height:100%;z-index:-1;}
 .screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;}
 *{box-sizing:border-box;color:inherit;}
+/* temp */
+div,span,b,p,dl,dt,dd,small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 `

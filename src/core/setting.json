@@ -5,7 +5,8 @@
     "login": "/sign-in",
     "register": "/sign-up",
     "passwordRecovery": "/password-recovery",
-    "sites": "/sites"
+    "sites": "/sites",
+    "campaigns": "/campaigns"
   },
   "local_storage": {
     "locale": "_locale"

@@ -1,14 +1,14 @@
 import RequestManager from '../RequestManager'
-import { IReqPostRegister, IResPostRegister } from '@/core/adaptor/endpoints/dummy/auth/postRegister'
-import { IReqPostLogin, IResPostLogin } from '@/core/adaptor/endpoints/dummy/auth/postLogin'
+import { IReqPostRegister, IResPostRegister } from '@/core/adaptor/fake-dev-endpoints/auth/postRegister'
+import { IReqPostLogin, IResPostLogin } from '@/core/adaptor/fake-dev-endpoints/auth/postLogin'
 import {
   IReqPostEmailConfirmation,
   IResPostEmailConfirmation,
-} from '@/core/adaptor/endpoints/dummy/auth/postEmailConfirmation'
+} from '@/core/adaptor/fake-dev-endpoints/auth/postEmailConfirmation'
 import {
   IReqPostPinVerification,
   IResPostPinVerification,
-} from '@/core/adaptor/endpoints/dummy/auth/postPinVerification'
+} from '@/core/adaptor/fake-dev-endpoints/auth/postPinVerification'
 
 export const reqPostLogin = (data: IReqPostLogin['data']) => {
   return RequestManager.create<IReqPostLogin, IResPostLogin>({
